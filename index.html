@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honestraj V - UI/UX Designer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Retro Teal & Cream -->
+    <!-- Application Structure Plan: A single-page application with a distinct, blocky, retro layout inspired by the user's image. Navigation is fixed at the top. Each section (Hero, Experience, Skills) is a visually separate block with its own background color to mimic classic web design. The 'Skills' section uses circular icons, directly referencing the example image. This structure is chosen for its strong visual character and nostalgic appeal. -->
+    <!-- Visualization & Content Choices: Skills -> Goal: Present abilities in a stylized, retro format -> Method: HTML/CSS circular icons with text -> Justification: Replaces modern charts with a design element that fits the theme perfectly, focusing on style and readability over complex data visualization. Experience -> Goal: Clear, chronological presentation -> Method: Simple text blocks -> Justification: A straightforward layout aligns with the retro theme, avoiding overly complex interactions like accordions. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            background-color: #45B3AF;
+            font-family: 'Roboto Slab', serif;
+            color: #3C3C3C;
+        }
+        h1, h2, h3, h4, .nav-link {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+        }
+        .retro-section {
+            background-color: #F5F1E9;
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #D9534F;
+        }
+        .skill-icon-circle {
+            background-color: #D9534F;
+            color: #F5F1E9;
+            width: 120px;
+            height: 120px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .skill-icon-circle:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .divider {
+            height: 2px;
+            width: 50px;
+            background-color: #3C3C3C;
+            margin: 0.5rem auto;
+        }
+        .btn-retro {
+            background-color: #3C3C3C;
+            color: #F5F1E9;
+            transition: background-color 0.3s ease;
+        }
+        .btn-retro:hover {
+            background-color: #D9534F;
+        }
+        .btn-retro:disabled {
+            background-color: #6b7280;
+            cursor: not-allowed;
+        }
+        .output-container {
+             background-color: #e5e0d7; 
+             border: 2px dashed #b0a99a;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white/90 backdrop-blur-sm shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-800">HV.</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="nav-link text-gray-700 font-bold tracking-wider">About Me</a>
+                <a href="#experience" class="nav-link text-gray-700 font-bold tracking-wider">Experience</a>
+                <a href="#skills" class="nav-link text-gray-700 font-bold tracking-wider">Skills</a>
+                <a href="#ai-tools" class="nav-link text-gray-700 font-bold tracking-wider">AI Tools</a>
+                <a href="#contact" class="nav-link text-gray-700 font-bold tracking-wider">Contact</a>
+            </div>
+             <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                    <span class="text-2xl">☰</span>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white pb-4">
+            <a href="#about" class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">About Me</a>
+            <a href="#experience" class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Experience</a>
+            <a href="#skills" class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Skills</a>
+            <a href="#ai-tools" class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">AI Tools</a>
+            <a href="#contact" class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="py-20 text-center">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl md:text-6xl text-white font-bold tracking-wider">HONESTRAJ V</h1>
+                <p class="mt-4 text-xl md:text-2xl text-white font-light">WELCOME TO MY RETRO-THEMED RESUME!</p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="retro-section py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold">About Me</h2>
+                <div class="divider"></div>
+                <p class="max-w-3xl mx-auto mt-4 text-lg leading-relaxed">
+                    As a UI/UX Designer with over 3+ years of experience in designing intuitive interfaces for ERP and HRMS systems. Proficient in Figma and Adobe Creative Cloud, with a strong grasp of the end-to-end design process. Skilled in wireframing, prototyping, and building scalable design systems. Delivered responsive, user-centered solutions across web and mobile platforms. Completed 10+ projects, including web design and video editing.
+                </p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20">
+             <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold text-white">My Skills</h2>
+                <div class="divider bg-white"></div>
+                <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+                    <div class="flex flex-col items-center">
+                        <div class="skill-icon-circle rounded-full flex items-center justify-center text-5xl">✎</div>
+                        <h3 class="text-2xl font-bold mt-4 text-white">Design Core</h3>
+                        <p class="text-white mt-2">UI/UX, Visual & Interaction Design, User Research, Wireframing.</p>
+                    </div>
+                     <div class="flex flex-col items-center">
+                        <div class="skill-icon-circle rounded-full flex items-center justify-center text-5xl">🏛️</div>
+                        <h3 class="text-2xl font-bold mt-4 text-white">Strategy</h3>
+                        <p class="text-white mt-2">Design Thinking, Problem Solving, Information Architecture.</p>
+                    </div>
+                     <div class="flex flex-col items-center">
+                        <div class="skill-icon-circle rounded-full flex items-center justify-center text-5xl">🎨</div>
+                        <h3 class="text-2xl font-bold mt-4 text-white">Visual Tools</h3>
+                        <p class="text-white mt-2">Figma, Adobe XD, Photoshop, Illustrator.</p>
+                    </div>
+                     <div class="flex flex-col items-center">
+                        <div class="skill-icon-circle rounded-full flex items-center justify-center text-5xl">🎬</div>
+                        <h3 class="text-2xl font-bold mt-4 text-white">Video & Animation</h3>
+                        <p class="text-white mt-2">2D & 3D Animation, After Effects, Premiere Pro.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="retro-section py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center">Experience</h2>
+                <div class="divider"></div>
+                <div class="mt-12 max-w-3xl mx-auto">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold">UI/UX Designer</h3>
+                        <p class="text-lg text-gray-700">Colan Infotech Private Limited | Aug 2022 - Present</p>
+                        <ul class="list-disc list-inside mt-4 space-y-2 text-gray-600">
+                            <li>Led UI/UX design for Awal Plastics (ERP), creating over 3,000 wireframes.</li>
+                            <li>Designed user-friendly websites for clients like Excellent Education, Excellent Hospital, LightUp Temples, and Acuite Ratings.</li>
+                            <li>Developed user experiences with elaborate planning and created style guides for UI consistency.</li>
+                            <li>Produced engaging 2D/3D animation and edited videos for RDvault and Guard Global.</li>
+                            <li>Collaborated with cross-functional teams to define UI requirements for web and mobile apps.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Awards Section -->
+        <section id="awards" class="py-20">
+             <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold text-white">Awards</h2>
+                <div class="divider bg-white"></div>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+                    <div class="bg-gray-800/20 rounded-lg p-6 text-center text-white">
+                        <h3 class="text-xl font-bold">Solid Project Delivery Award</h3>
+                        <p class="mt-1">Colan Infotech | Q1 2024 (July)</p>
+                    </div>
+                    <div class="bg-gray-800/20 rounded-lg p-6 text-center text-white">
+                        <h3 class="text-xl font-bold">Outstanding Performance Award</h3>
+                        <p class="mt-1">Colan Infotech | Q4 2025 (March)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Tools Section -->
+        <section id="ai-tools" class="retro-section py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold">✨ AI-Powered Tools</h2>
+                <div class="divider"></div>
+                <p class="text-lg mt-4">Explore my skills with these interactive AI-powered tools.</p>
+                <div class="mt-8 flex flex-wrap justify-center gap-4">
+                     <button id="generate-pitch-btn" class="btn-retro inline-block text-lg font-bold py-3 px-8 rounded-md uppercase tracking-wider">Generate Career Pitch</button>
+                     <button id="generate-questions-btn" class="btn-retro inline-block text-lg font-bold py-3 px-8 rounded-md uppercase tracking-wider">Generate Interview Questions</button>
+                </div>
+                
+                <div id="pitch-container" class="mt-8 max-w-3xl mx-auto text-left hidden">
+                    <div class="output-container rounded-lg p-6">
+                        <h3 class="text-2xl font-bold text-center mb-4">Career Pitch</h3>
+                        <div id="pitch-loading-spinner" class="hidden text-center p-4">
+                            <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-red-500 mx-auto"></div>
+                            <p class="text-gray-600 mt-2">Generating...</p>
+                        </div>
+                        <p id="pitch-output" class="text-gray-800 leading-relaxed whitespace-pre-wrap"></p>
+                    </div>
+                </div>
+
+                <div id="questions-container" class="mt-8 max-w-3xl mx-auto text-left hidden">
+                    <div class="output-container rounded-lg p-6">
+                         <h3 class="text-2xl font-bold text-center mb-4">Interview Questions</h3>
+                        <div id="questions-loading-spinner" class="hidden text-center p-4">
+                            <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-red-500 mx-auto"></div>
+                            <p class="text-gray-600 mt-2">Generating...</p>
+                        </div>
+                        <div id="questions-output" class="text-gray-800 leading-relaxed whitespace-pre-wrap"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20">
+             <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold text-white">Get In Touch</h2>
+                <div class="divider bg-white"></div>
+                <p class="text-white text-lg mt-4">Have a project in mind? I'd love to hear from you.</p>
+                <div class="mt-8">
+                     <a href="mailto:honestuiux@gmail.com" class="btn-retro inline-block text-lg font-bold py-3 px-8 rounded-md uppercase tracking-wider">Email Me</a>
+                </div>
+                 <div class="mt-10 flex justify-center space-x-6">
+                     <a href="https://www.linkedin.com/in/honestraj-vijay/" target="_blank" class="text-white hover:text-red-400 transition-colors">LinkedIn</a>
+                     <span>•</span>
+                     <a href="https://honestv.vercel.app/" target="_blank" class="text-white hover:text-red-400 transition-colors">Portfolio</a>
+                 </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="py-6" style="background-color: #3C3C3C;">
+        <div class="text-center text-gray-400">
+            <p>&copy; 2025 Honestraj V. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            const generatePitchBtn = document.getElementById('generate-pitch-btn');
+            const pitchContainer = document.getElementById('pitch-container');
+            const pitchOutput = document.getElementById('pitch-output');
+            const pitchLoadingSpinner = document.getElementById('pitch-loading-spinner');
+
+            const generateQuestionsBtn = document.getElementById('generate-questions-btn');
+            const questionsContainer = document.getElementById('questions-container');
+            const questionsOutput = document.getElementById('questions-output');
+            const questionsLoadingSpinner = document.getElementById('questions-loading-spinner');
+
+            const resumeData = `
+                - Name: Honestraj V
+                - Role: UI/UX Designer with 3+ years of experience.
+                - Specialization: Designing intuitive interfaces for ERP and HRMS systems.
+                - Core Skills: Wireframing, prototyping, building scalable design systems, user research, interaction design, information architecture, design thinking.
+                - Technical Skills: Figma, Adobe Creative Cloud (Photoshop, Illustrator, XD), After Effects, Premiere Pro, 2D/3D Animation.
+                - Key Achievements: Led design for an ERP platform with over 3,000 wireframes (Awal Plastics). Designed multiple user-friendly websites. Produced engaging 2D/3D animations and videos.
+                - Soft Skills: Collaborative, problem-solving, strong time management.
+            `;
+            
+            const callGeminiAPI = async (prompt, outputElement, loadingElement, buttonElement) => {
+                buttonElement.disabled = true;
+                outputElement.parentElement.parentElement.classList.remove('hidden');
+                outputElement.classList.add('hidden');
+                loadingElement.classList.remove('hidden');
+
+                // Hide other container if visible
+                if (outputElement.id === 'pitch-output') {
+                    questionsContainer.classList.add('hidden');
+                } else {
+                    pitchContainer.classList.add('hidden');
+                }
+
+                const apiKey = ""; 
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+
+                    const result = await response.json();
+                    
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        outputElement.innerHTML = text.replace(/\n/g, '<br>'); // Use innerHTML to render line breaks
+                    } else {
+                        throw new Error('Invalid response structure from API');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    outputElement.textContent = 'Sorry, an error occurred. Please try again later.';
+                } finally {
+                    loadingElement.classList.add('hidden');
+                    outputElement.classList.remove('hidden');
+                    buttonElement.disabled = false;
+                }
+            };
+
+            generatePitchBtn.addEventListener('click', () => {
+                const prompt = `Based on the following resume details, write a short, compelling professional pitch (like a cover letter summary) for Honestraj V. Highlight his expertise in ERP systems, his proficiency with modern design tools, and his ability to handle projects from concept to completion. The tone should be confident and professional.\n\nResume Details:\n${resumeData}`;
+                callGeminiAPI(prompt, pitchOutput, pitchLoadingSpinner, generatePitchBtn);
+            });
+
+            generateQuestionsBtn.addEventListener('click', () => {
+                const prompt = `You are an expert hiring manager for a senior UI/UX Designer role. Based on the following resume summary, generate 5 insightful interview questions that would effectively probe the candidate's skills and experience. Include a mix of behavioral, technical, and project-based questions. Format the output as a numbered list with each question on a new line.\n\nResume Details:\n${resumeData}`;
+                callGeminiAPI(prompt, questionsOutput, questionsLoadingSpinner, generateQuestionsBtn);
+            });
+        });
+    </script>
+</body>
+</html>
